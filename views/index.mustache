@@ -7,14 +7,29 @@
 </head>
 
 <body>
-  <ul class='user-list'>
-    {{#users}}
-      <li class='user-list__item'>
-        <img src={{avatar}} alt="avatar">
-        <span>{{username}}</span>
-      </li>
-    {{/users}}
-  </ul>
+  <div class='users'>
+    <ul class='users__list'>
+      {{#users}}
+        <li class='users__list__item'>
+          <img class='user__avatar' src={{avatar}} alt="avatar">
+          <span class='user__name'>{{name}}</span>
+          {{#address.city}}
+            <span class='user__city'>{{address.city}}</span>
+          {{/address.city}}
+          {{#address.state_or_province}}
+            <span class='user_state-or-province'>{{address.state_or_province}}</span>
+          {{/address.state_or_province}}
+          {{^address.state_or_province}}
+            {{#address.country}}
+              <span class='user_country'>{{address.country}}</span>
+            {{/address.country}}
+          {{/address.state_or_province}}
+
+
+        </li>
+      {{/users}}
+    </ul>
+  </div>
 </body>
 
 </html>
