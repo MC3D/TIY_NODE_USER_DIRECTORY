@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Node User Directory</title>
+  <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
@@ -11,21 +12,21 @@
     <ul class='users__list'>
       {{#users}}
         <li class='users__list__item'>
-          <img class='user__avatar' src={{avatar}} alt="avatar">
-          <span class='user__name'>{{name}}</span>
-          {{#address.city}}
-            <span class='user__city'>{{address.city}}</span>
-          {{/address.city}}
-          {{#address.state_or_province}}
-            <span class='user_state-or-province'>{{address.state_or_province}}</span>
-          {{/address.state_or_province}}
-          {{^address.state_or_province}}
-            {{#address.country}}
-              <span class='user_country'>{{address.country}}</span>
-            {{/address.country}}
-          {{/address.state_or_province}}
-
-
+          <a href={{id}}>
+            <img class='user__avatar' src={{avatar}} alt="avatar">
+            <span class='user__name'>{{name}}</span>
+            {{#address.city}}
+              <span class='user__city'>{{address.city}}</span>
+            {{/address.city}}
+            {{#address.state_or_province}}
+              <span class='user_state-or-province'>{{address.state_or_province}}</span>
+            {{/address.state_or_province}}
+            {{^address.state_or_province}}
+              {{#address.country}}
+                <span class='user_country'>{{address.country}}</span>
+              {{/address.country}}
+            {{/address.state_or_province}}
+          </a>
         </li>
       {{/users}}
     </ul>
